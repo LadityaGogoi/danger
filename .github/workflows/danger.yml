@@ -16,9 +16,7 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: yarn install
-      - name: Run Danger
-        uses: danger/danger-js@11.6.0
-        with:
-          dangerfile: dangerfile.ts
+      - name: Danger
+        run: yarn danger ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
